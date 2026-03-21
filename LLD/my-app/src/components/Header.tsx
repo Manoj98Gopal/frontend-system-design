@@ -1,6 +1,14 @@
 import { Link } from "react-router-dom";
+import type { Languages } from "../utils/DataConfig";
+import type { Dispatch, SetStateAction } from "react";
 
-const Header = () => {
+
+type HeaderProps = {
+  language:keyof Languages,
+  setLanguage: Dispatch<SetStateAction<keyof Languages>>;
+}
+
+const Header = ({ language, setLanguage }:HeaderProps) => {
   return (
     <header className="flex justify-between items-center px-8 py-4 bg-black text-white">
       <div>
@@ -23,6 +31,21 @@ const Header = () => {
           <li>
             <Link to="/login">login</Link>
           </li>
+
+          <select
+            defaultValue={language}
+            className="bg-black"
+            onChange={e => {
+              setLanguage(e.target.value as keyof Languages);
+            }}
+          >
+            <option value="en">English</option>
+            <option value="ka">Kannada</option>
+            <option value="hi">Hindi</option>
+            <option value="sp">Spanish</option>
+            <option value="fr">French</option>
+            <option value="ru">Russia</option>
+          </select>
         </ul>
       </nav>
     </header>
