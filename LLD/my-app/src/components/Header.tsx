@@ -41,6 +41,7 @@ const Header = ({ language, setLanguage }:HeaderProps) => {
           >
             <option value="en">English</option>
             <option value="ka">Kannada</option>
+            <option value="ml">Malayalam</option>
             <option value="hi">Hindi</option>
             <option value="sp">Spanish</option>
             <option value="fr">French</option>
