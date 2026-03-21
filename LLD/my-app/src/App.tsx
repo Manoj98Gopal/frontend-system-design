@@ -8,6 +8,7 @@ import Login from "./Pages/Login";
 import Protected from "./components/Protected";
 import { useState } from "react";
 import type { Languages } from "./utils/DataConfig";
+import Accordion from "./Pages/Accordion";
 
 function App() {
 
@@ -27,6 +28,7 @@ function App() {
           </Route>
           <Route path="/contact" element={<Contact />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/accordion" element={<Accordion />} />
         </Routes>
       </div>
     </BrowserRouter>

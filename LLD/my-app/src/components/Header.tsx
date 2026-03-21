@@ -22,6 +22,9 @@ const Header = ({ language, setLanguage }:HeaderProps) => {
           <li>
             <Link to="/about">About</Link>
           </li>
+           <li>
+            <Link to="/accordion">Accordion</Link>
+          </li>
           <li>
             <Link to="/profile">Profile</Link>
           </li>

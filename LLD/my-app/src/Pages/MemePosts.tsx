@@ -19,14 +19,14 @@ export type Detail = {
 const MemePosts = () => {
       const [data, setData] = useState<Detail[]>([]);
       const [loading, setLoading] = useState(false);
-      const shimmerCards = Array.from({ length: 8 });
+      const shimmerCards = Array.from({ length: 10 });
     
       const fetchData = async (length: number) => {
         try {
           setLoading(true);
           const response = await fetch(`https://meme-api.com/gimme/${length}`);
           const data = await response.json();
-          setData(data?.memes ?? []);
+          setData((props) => [...data?.memes,...props]);
         } catch (error) {
           console.log("error ", error);
         } finally {
@@ -35,35 +35,45 @@ const MemePosts = () => {
       };
     
       useEffect(() => {
-        fetchData(20);
+        fetchData(40);
+          window.addEventListener("scroll",handleScroll)
+        return () => window.removeEventListener("scroll",handleScroll)
       }, []);
+
+
+      const handleScroll = () => {
+        if(window.scrollY + window.innerHeight == document.documentElement.scrollHeight){
+          fetchData(20)
+        }
+      }
+
+
   return (
     <div className="min-h-screen bg-slate-50 p-6">
-      {loading ? (
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-          {shimmerCards.map((_, idx) => (
-            <div key={idx} className="h-full">
-              <MemeShimmer />
-            </div>
-          ))}
-        </div>
-      ) : null}
+      
 
-      {!loading && data.length === 0 ? (
-        <div className="flex min-h-[40vh] items-center justify-center text-base font-medium text-slate-500">
-          No memes found.
-        </div>
-      ) : null}
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
 
-      {!loading && data.length > 0 ? (
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-          {data.map((details, idx) => (
+          <>
+          {data?.map((details, idx) => (
             <div key={idx} className="h-full">
               <MemeCard {...details} />
             </div>
           ))}
+          </>
+
+          {loading && <>
+           {shimmerCards.map((_, idx) => (
+            <div key={idx} className="h-full">
+              <MemeShimmer />
+            </div>
+          ))}
+          </>}
+
         </div>
-      ) : null}
+
+
+      
     </div>  )
 }
 
