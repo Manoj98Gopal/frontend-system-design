@@ -34,6 +34,25 @@ export const commentsData: CommentItem[] = [
             replies: []
           }
         ]
+      },
+      {
+        id: 14,
+        userName: "megha_ui",
+        time: "2026-03-24T10:30:00Z",
+        profilePic: "https://randomuser.me/api/portraits/women/30.jpg",
+        comment:
+          "The animations feel extremely smooth and natural, especially the transitions between sections. It doesn't feel heavy at all. I wanted to know if you are using Framer Motion or any custom CSS animations for achieving this level of performance and smoothness.",
+        replies: [
+          {
+            id: 15,
+            userName: "manoj_dev",
+            time: "2026-03-24T10:35:45Z",
+            profilePic: "https://randomuser.me/api/portraits/men/32.jpg",
+            comment:
+              "Yes, I am using Framer Motion for most of the animations and transitions. It provides great control and performance. I also optimized animations by limiting re-renders and using lazy loading where necessary to keep everything smooth.",
+            replies: []
+          }
+        ]
       }
     ]
   },
