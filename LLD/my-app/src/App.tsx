@@ -9,12 +9,11 @@ import Protected from "./components/Protected";
 import { useState } from "react";
 import type { Languages } from "./utils/DataConfig";
 import Accordion from "./Pages/Accordion";
+import NestedComment from "./Pages/NestedComment";
 
 function App() {
 
-    const [language, setLanguage] = useState<keyof Languages>("en")
-  
-
+  const [language, setLanguage] = useState<keyof Languages>("en")
 
   return (
     <BrowserRouter>
@@ -29,6 +28,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/login" element={<Login />} />
           <Route path="/accordion" element={<Accordion />} />
+          <Route path="/nestedComment" element={<NestedComment />} />
         </Routes>
       </div>
     </BrowserRouter>
