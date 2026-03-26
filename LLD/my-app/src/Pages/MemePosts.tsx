@@ -35,7 +35,7 @@ const MemePosts = () => {
       };
     
       useEffect(() => {
-        fetchData(40);
+        fetchData(30);
           window.addEventListener("scroll",handleScroll)
         return () => window.removeEventListener("scroll",handleScroll)
       }, []);
