@@ -10,6 +10,7 @@ import { useState } from "react";
 import type { Languages } from "./utils/DataConfig";
 import Accordion from "./Pages/Accordion";
 import NestedComment from "./Pages/NestedComment";
+import ImageSlider from "./Pages/ImageSlider";
 
 function App() {
 
@@ -29,6 +30,8 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/accordion" element={<Accordion />} />
           <Route path="/nestedComment" element={<NestedComment />} />
+          <Route path="/imageSlider" element={<ImageSlider />} />
+
         </Routes>
       </div>
     </BrowserRouter>

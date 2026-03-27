@@ -19,6 +19,9 @@ const Header = ({ language, setLanguage }:HeaderProps) => {
 
       <nav>
         <ul className="flex items-center gap-3 text-sm pr-4">
+           <li>
+            <Link to="/imageSlider">Image Slider</Link>
+          </li>
           <li>
             <Link to="/nestedComment">Nested Comment</Link>
           </li>
