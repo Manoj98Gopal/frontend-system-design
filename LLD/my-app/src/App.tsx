@@ -11,6 +11,8 @@ import type { Languages } from "./utils/DataConfig";
 import Accordion from "./Pages/Accordion";
 import NestedComment from "./Pages/NestedComment";
 import ImageSlider from "./Pages/ImageSlider";
+import Pagination from "./Pages/Pagination";
+import YoutubeLiveStream from "./Pages/YoutubeLiveStream";
 
 function App() {
 
@@ -31,6 +33,9 @@ function App() {
           <Route path="/accordion" element={<Accordion />} />
           <Route path="/nestedComment" element={<NestedComment />} />
           <Route path="/imageSlider" element={<ImageSlider />} />
+          <Route path="/pagination" element={<Pagination />} />
+          <Route path="/liveStream" element={<YoutubeLiveStream />} />
+
 
         </Routes>
       </div>
