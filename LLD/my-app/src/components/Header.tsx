@@ -20,6 +20,9 @@ const Header = ({ language, setLanguage }:HeaderProps) => {
       <nav>
         <ul className="flex items-center gap-3 text-sm pr-4">
            <li>
+            <Link to="/search">Search UI</Link>
+          </li>
+           <li>
             <Link to="/liveStream">Youtube stream</Link>
           </li>
           <li>
@@ -39,9 +42,6 @@ const Header = ({ language, setLanguage }:HeaderProps) => {
           </li>
           <li>
             <Link to="/profile">Profile</Link>
-          </li>
-          <li>
-            <Link to="/contact">Contact</Link>
           </li>
           <li>
             <Link to="/login">login</Link>

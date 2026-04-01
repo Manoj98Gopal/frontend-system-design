@@ -3,7 +3,6 @@ import Header from "./components/Header";
 import MemePosts from "./Pages/MemePosts";
 import AboutUs from "./Pages/AboutUs";
 import Profile from "./Pages/Profile";
-import Contact from "./Pages/Contact";
 import Login from "./Pages/Login";
 import Protected from "./components/Protected";
 import { useState } from "react";
@@ -13,6 +12,7 @@ import NestedComment from "./Pages/NestedComment";
 import ImageSlider from "./Pages/ImageSlider";
 import Pagination from "./Pages/Pagination";
 import YoutubeLiveStream from "./Pages/YoutubeLiveStream";
+import SearchUi from "./Pages/SearchUi";
 
 function App() {
 
@@ -28,15 +28,13 @@ function App() {
           <Route element={<Protected />}>
             <Route path="/profile" element={<Profile />} />
           </Route>
-          <Route path="/contact" element={<Contact />} />
           <Route path="/login" element={<Login />} />
           <Route path="/accordion" element={<Accordion />} />
           <Route path="/nestedComment" element={<NestedComment />} />
           <Route path="/imageSlider" element={<ImageSlider />} />
           <Route path="/pagination" element={<Pagination />} />
           <Route path="/liveStream" element={<YoutubeLiveStream />} />
-
-
+          <Route path="/search" element={<SearchUi />} />
         </Routes>
       </div>
     </BrowserRouter>
